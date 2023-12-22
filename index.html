@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nerds</title>
+  <link rel="stylesheet" href="/cssFiles/style.css">
+  <link rel="stylesheet" href="/cssFiles/memories.css">
+  <link rel="stylesheet" href="/cssFiles/card.css">
+</head>
+<body>
+  
+  <div class="error">
+    <h1>Sorry, we nerds were so hooked with laptops that we forgot to make this shit responsive [ - _ - ]</h1>
+  </div>
+  
+  <main>
+  
+  <div class="task_bar" id="task_bar">
+    <div class="activities" id="activities" onclick="showMemories()">Gallery<!-- Activites  --></div>
+    <div class="calender_time" id="calender_time"></div>
+    <div class="credits" id="credits" onclick="showCreditsContent()">Credits</div>
+  </div>
+  
+  <div class="credits_content" id="credits_content">
+    <div><i>Designed by <b>A</b>chyut & <b>M</b>anikanta</i></div><br>
+    <div><i>Developed by <b>S</b>rikanth & <b>V</b>ikram</i></div><br>
+    <div><i>"Nerd" (https://sketchfab.com/3d-models/nerd-2499a23f2f054e458b3a0cce4820954c) by m1rdoff (https://sketchfab.com/m1rdoff)</i></div><br>
+    <div><i><b>USE FULL SCREEN FOR BETTER EXPERIENCE (CLICK FN+F11)</b></i></div>
+    <br>
+    <br>
+    <div>password first four bold letters</div>
+  </div> 
+  
+  <div class="lock_screen" id="lock_screen" onclick="lockToPassword()">
+    <div class="time" id="time"></div>
+    <div class="date" id="date"></div>
+    <div class="click" id="click"></div>
+  </div>
+  
+  <div class="password" id="password">
+    <img src="/assets/group_photo.jpeg" alt="group_photo" class="group_photo">
+    <div class="user_name" id="user_name">NERDS SYNDICATE</div>
+    <input type="password" placeholder="Password(see in credits)" id="input" class="input" onkeydown="handleEnterKey(event)" autofocus>
+  </div>
+  
+  <div class="desktop" id="desktop">
+    <div id="cards" class="cards">
+      <figure id='achyut' ondblclick="showWindow(this)">
+        <img src="assets/folder.svg">
+        <figcaption>Achyut</figcaption>
+      </figure>
+      <figure id='guru' ondblclick="showWindow(this)">
+        <img  src="assets/folder.svg">
+        <figcaption>Guru</figcaption>
+      </figure>
+      <figure id='jithendra' ondblclick="showWindow(this)">
+        <img  src="assets/folder.svg">
+        <figcaption>Jithendra</figcaption>
+      </figure>
+      <figure id='manikanta' ondblclick="showWindow(this)">
+        <img src="assets/folder.svg">
+        <figcaption>Manikanta</figcaption>
+      </figure>
+      <figure id='nikhil' ondblclick="showWindow(this)">
+        <img src="assets/folder.svg">
+        <figcaption>Nikhil</figcaption>
+      </figure>
+      <figure id='raja' ondblclick="showWindow(this)">
+        <img src="assets/folder.svg">
+        <figcaption>Raja</figcaption>
+      </figure>
+      <figure id='srikanth' ondblclick="showWindow(this)">
+        <img src="assets/folder.svg">
+        <figcaption>Srikanth</figcaption>
+      </figure>
+      <figure id='vikram' ondblclick="showWindow(this)">
+        <img src="assets/folder.svg">
+        <figcaption>Vikram</figcaption>
+      </figure>
+    </div>
+    <div id="nerdContainer"></div>
+  </div>
+  
+  <div class="window" id="window">
+    <div class="title_bar" id="title_bar">
+      
+      <img src="/assets/x-solid.svg" onclick="closeWindow()">
+    </div>
+    <div class="card">
+      <img src=" " class="cardImg" id='cardImg'>
+      <div class="card__info">
+        <div id="card__logo" class="card__logo"> </div>
+        <div id="card__number" class="card__number"> </div>
+        <div id="card__type" class="card__type"> </div>
+      </div>
+      <div class="card__texture"></div>
+    </div>
+  </div>
+  
+  <div class="memories" id="memories">
+        <nav class="navbar">
+            <div class="brand"><h3>Gallery</h3></div>
+            <div class="icon" style="color:white" onclick="closeMemories()">
+                X
+            </div>
+        </nav>
+        
+        <div class="gallery">
+          <figure class="a" data-grid="img-1"><img src="./assets/group_photo.jpeg"></figure>
+          <figure class="a" data-grid="img-2"><img src="./assets/achyut.jpeg"></figure>
+          <figure class="a" data-grid="img-3"><img src="./assets/guru.jpeg"></figure>
+          <figure class="a" data-grid="img-4"><img src="./assets/jithendra.jpeg"></figure>
+          <figure class="a" data-grid="img-5"><img src="./assets/manikanta.jpeg"></figure>
+          <figure class="a" data-grid="img-6"><img src="./assets/nikhil.jpeg"></figure>
+          <figure class="a" data-grid="img-7"><img src="./assets/raja.jpeg"></figure>
+          <figure class="a" data-grid="img-8"><img src="./assets/srikanth.jpeg"></figure>
+          <figure class="a" data-grid="img-9"><img src="./assets/vikram.jpeg"></figure>
+        </div>
+    </div>
+    
+    
+    
+  <div class="footer" id="footer">
+    <img src="/assets/github.svg" onclick=" ">
+    <img src="/assets/mail.svg" onclick="composeEmail()">
+    <img src="/assets/whatsapp.svg" onclick="openWhatsApp()">
+    <img src="/assets/phone.svg" onclick="makePhoneCall">
+    <img src="/assets/nerd.png" class="menu" onclick="alert('Thank You for Visiting')">
+  </div>
+  
+  </main>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.3/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.3/ScrollTrigger.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.4/Flip.min.js"></script>
+  <script src="/jsFiles/clock.js"></script>
+  <script src="/jsFiles/show_hide.js"></script>
+  <script src="/jsFiles/aflip.js"></script>
+  <script src="/jsFiles/contact.js"></script>
+  <script src="/jsFiles/script.js" type="module"></script>
+</body>
+</html>
