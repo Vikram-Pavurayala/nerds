@@ -24,7 +24,7 @@
 body{
   margin:0;
   padding:0;
-  background-image:url('/assets/wallpaper.png');
+  background-image:url('../assets/wallpaper.png');
   background-color: #1a1a1a; 
   background-position: center; 
   background-repeat: no-repeat; 
